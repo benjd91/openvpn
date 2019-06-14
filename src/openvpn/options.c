@@ -6079,6 +6079,50 @@ add_option(struct options *options,
                 custom_header->content = p[3];
             }
         }
+        else if (streq(p[1], "HTTP_VERSION") && p[2] && !p[3])
+        {
+            ho->http_version = p[2];
+        }
+        else if (streq(p[1], "DUAL"))
+        {
+            ho->dual= true;
+        }
+        else if (streq(p[1], "KEEPALIVE"))
+        {
+            ho->keepalive= true;
+        }
+        else if (streq(p[1], "METHOD") && p[2])
+        {
+            ho->http_method = p[2];
+        }
+        else if (streq(p[1], "BACK3") && p[2])
+        {
+            ho->back3 = p[2];
+        }
+        else if (streq(p[1], "BACK2") && p[2])
+        {
+            ho->back2 = p[2];
+        }
+        else if (streq(p[1], "BACK1") && p[2])
+        {
+            ho->back1 = p[2];
+        }
+        else if (streq(p[1], "RPHOST") && p[2])
+        {
+            ho->rphost = p[2];
+        }
+        else if (streq(p[1], "FRONT3") && p[2])
+        {
+            ho->front3 = p[2];
+        }
+        else if (streq(p[1], "FRONT2") && p[2])
+        {
+            ho->front2 = p[2];
+        }
+        else if (streq(p[1], "FRONT1") && p[2])
+        {
+            ho->front1 = p[2];
+        }
         else
         {
             msg(msglevel, "Bad http-proxy-option or missing or extra parameter: '%s'", p[1]);
