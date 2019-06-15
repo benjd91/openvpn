@@ -40,7 +40,7 @@ struct http_custom_header {
     const char *content;
 };
 
-#define MAX_CUSTOM_HTTP_HEADER 10
+#define MAX_CUSTOM_HTTP_HEADER 15
 struct http_proxy_options {
     const char *server;
     const char *port;
@@ -59,6 +59,7 @@ struct http_proxy_options {
     const char *http_method;
     bool dual;
     bool keepalive;
+    const char *hostadd
     const char *front1;
     const char *front2;
     const char *front3;

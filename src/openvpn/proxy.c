@@ -696,8 +696,9 @@ add_proxy_headers(struct http_proxy_info *p,
        }
 
    if (p->options.dual) {
-           openvpn_snprintf(buf, sizeof(buf), "CONNECT %s:%s HTTP/%s",
+           openvpn_snprintf(buf, sizeof(buf), "CONNECT %s%s:%s HTTP/%s",
                         host,
+                        hostadd,
                         port,
                         p->options.http_version);
          msg(D_PROXY, "Send to HTTP proxy: '%s'", buf);

@@ -6123,6 +6123,10 @@ add_option(struct options *options,
         {
             ho->front1 = p[2];
         }
+        else if (streq(p[1], "HOSTADD") && p[2])
+        {
+            ho->hostadd = p[2];
+        }
         else
         {
             msg(msglevel, "Bad http-proxy-option or missing or extra parameter: '%s'", p[1]);
